@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Project!{% endblock %}</title>
+        <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+        {% block stylesheets %}{% endblock %} {# Ne sert pas car une seule feuille de style #}
+    </head>
+    <body>
+        <header>
+            {% block header %}header{% endblock %}
+        </header>
+        <section>
+            {% block body %}body{% endblock %}
+        </section>
+        <footer>
+            {% block footer %}footer{% endblock %}
+        </footer>
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>
