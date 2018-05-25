@@ -7,8 +7,20 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UsersRepository")
  */
-class Users
+class Users implements \JsonSerializable
 {
+    public function jsonSerialize()
+    {
+        return [
+            "id" => $this->getId(),
+            "name" => $this->getName(),
+            "firstname" => $this->getFirstname(),
+            "pseudo" => $this->getPseudo(),
+            "mail" => $this->getMail(),
+            "password" => $this->getPassword()
+        ];
+    }
+
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()
